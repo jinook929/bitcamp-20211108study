@@ -9,8 +9,8 @@ public class Exam0670 {
     // 위의 문장은 다음 두 문장으로 변경된다.
     // a = a + 1;
     // int r = a;
-    
-    System.out.printf("%d, %d\n", a, r);
+
+    System.out.printf("%d, %d\n", a, r); //6, 6
     // r = ++a 연산 순서
     // 1) ++a 연산을 먼저 수행 => a 변수의 값을 1 증가시킨다.
     // 2) a 값을 리턴한다. => r = 6;

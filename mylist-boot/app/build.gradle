@@ -1,5 +1,5 @@
 plugins {
-  id 'org.springframework.boot' version '2.6.1'
+  id 'org.springframework.boot' version '2.6.0'
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
   id 'java'
   id 'eclipse'
@@ -22,6 +22,8 @@ dependencies {
 test {
   useJUnitPlatform()
 }
+
+// eclipse 프로젝트 이름을 설정하기
 eclipse {
     project {
         name = "mylist-boot"

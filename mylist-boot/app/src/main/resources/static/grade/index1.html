@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>연락처</h1> 
+<a href="form.html">새 연락처</a>
+<table id = "x-contact-table" border="1">  
+  <thead>
+      <tr>
+        <th>이름</th>   
+        <th>이메일</th>
+        <th>전화번호</th>
+        <th>회사</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+    </tbody>
+    <script tpye ="text/javascript">
+    
+
+      var tbody = document.querySelector("#x-contact-table tbody")
+
+      fetch("/contact/list")
+      .then(function(response){  //서버와 연동. 서버에 응답이 오면 list실행
+        
+        // if(!response.ok){  //서버 실행 오류일때는 이 방법으로 체크.(response.ok가 false일경우 다른 함수실행 하지않고 바로 중지.)
+        //   alert("서버 실행 오류!")
+        //   return;
+        // }
+        //응답이 오면 json문자열(contact/list에있는)을 파싱해줘! 자바스크립트 객체로만들어줘!
+        return response.json();
+      })
+      .then(function(contacts){ 
+        console.log(contacts);  //위에서 리턴한 객체를 obj로 받을거야
+        for (var contact of contacts){ //웹 콘솔창에 배열 처음부터 끝까지 출력하는 반복문
+        var values = contact.split(",");
+        var tr = document.createElement("tr"); //태그를 만드는 필요할 때마다 새로운 tr태그를 생성하고, 지울수 있도록 하기위해서. queryselctor로 하면 일일이 다 아이디 지정해줘야 되기 때문.
+        tr.innerHTML = `<td><a href ="view.html?email=${values[1]}">${values[0]}</td> 
+        <td>${values[1]}</td>
+        <td>${values[2]}</td>
+        <td>${values[3]}</td> `;
+        tbody.appendChild(tr);
+        }
+      });
+      
+     
+      // <b>이름</b> 이런 태그는 다른 데이터를 제어하는 데이터이다. 이름도 데이터지만 태그는 이 이름이라는 데이터를 화면에 어떻게 출력할지 제어하는 데이터이다.(= meta data = markup = tag / HTML = Hyper Text Markup Language)
+         //split으로 쪼개면 리턴값은 배열. 위의  contacts배열을 , 단위로 쪼개 배열로 가져옴.
+      // static/index.html /contact/index.html 생성
+      // 기본 레이아웃짜고 배열 생성 
+    </script>
+</table>
+</body>
+</html>

@@ -25,6 +25,6 @@ public String test1(String name1, String name2, String name3, String name4, Stri
   //test URL : http://localhost:8080/lang/variable/exam2/test2?name=홍길동name=임꺽정&name=유관순&name=%EC%9E%84%EA%BA%BD%EC%A0%95&name=%EC%9C%A4%EB%B4%89%EA%B8%B8&name=%EA%B9%80%EA%B5%AC&name=%ED%99%8D%EB%B2%94%EB%8F%84
   public String test2(String[] name) {
      
-      return "=>  " + name[0]+","+name[1] + "," + name[2] + ","+ name[3] + ","+ name[4] + ","+ name[5] + ","+ name[6] + ",";
+      return "=>  " + name[0]+","+name[1] + "," + name[2] + ","+ name[3] + ","+ name[4] + ","+ name[5] + ","+ name[6] ;
     }
 }

@@ -32,5 +32,9 @@ public class Exam0460 {
     //
 
     System.out.println(Integer.toBinaryString(lang));
+    System.out.println(Integer.toBinaryString(lang));
+    System.out.println(Integer.toBinaryString(lang));
+    System.out.println(Integer.toBinaryString(lang));
+    System.out.println(Integer.toBinaryString(lang));
   }
 }

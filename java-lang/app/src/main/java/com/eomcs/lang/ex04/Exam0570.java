@@ -1,5 +1,7 @@
 package com.eomcs.lang.ex04;
 
+import java.util.Arrays;
+
 //# 배열 - 배열 메모리 초기화 
 public class Exam0570 {
   public static void main(String[] args) {
@@ -27,8 +29,14 @@ public class Exam0570 {
 
     // 배열 초기화 명령을 따로 실행할 때는 new int[] 를 생략할 수 없다.
     int[] arr5;
-    arr5 = new int[]{0, 0, 0, 0, 0}; 
+    arr5 = new int[]{0, 0, 0, 0, 0};
+    int[] arr6 = {1,2,3,4,5};
+    System.out.println(arr6[0]);
+    System.out.println(Arrays.toString(arr6));
+
+
   }
+
 }
 
 // 정리!

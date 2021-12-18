@@ -27,6 +27,8 @@ public class Exam0610 {
     //    System.out.println(temp);
 
     System.out.println(i); // 5
+    System.out.println(i++);//5
+    System.out.println(i);//6
 
   }
 }

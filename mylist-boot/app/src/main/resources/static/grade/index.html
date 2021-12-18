@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>성적</title>
+  </head>
+  <body>
+    <style>
+      body * {
+        text-align: center;
+      }
+    </style>
+    <h1>성적</h1>
+    <a href="form.html">새 성적</a>
+    <table id="x-contact-table" border="1">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>이메일</th>
+          <th>자바</th>
+          <th>자바스크립트</th>
+          <th>파이썬</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script type="text/javascript">
+      var tbody = document.querySelector('#x-contact-table tbody');
+
+      fetch('/grade/list')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (contacts) {
+          for (var contact of contacts) {
+            var values = contact.split(',');
+            var tr = document.createElement('tr');
+            tr.innerHTML = `<td><a href="view.html?email=${values[1]}">${values[0]}</a></td>
+        <td>${values[1]}</td>
+        <td>${values[2]}</td>
+        <td>${values[3]}</td>
+        <td>${values[4]}</td>`;
+            tbody.appendChild(tr);
+          }
+        });
+    </script>
+  </body>
+</html>

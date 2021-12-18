@@ -15,20 +15,24 @@ public class Exam0620 {
     //    i = i - 1;
 
 
-    i--;
-    // 컴파일러는 위의 문장을 다음과 같이 바꾼다.
-    //    int temp = i;
-    //    i = i - 1;
 
-    System.out.println(i); // 5
+    System.out.println(i); // 6
 
-    System.out.println(i--); // 5
+    System.out.println(i--); // 6
     // 위의 문장을 컴파일 하면 다음과 같이 바뀐다.
     //    int temp = i;
     //    i = i - 1;
     //    System.out.println(temp);
 
-    System.out.println(i); // 4
+    System.out.println(i); // 5
+    System.out.println(i--);//5
+    System.out.println(i);//4
+    System.out.println("-------------------------");
+    System.out.println(i--);//4
+    System.out.println(i--);//3
+    System.out.println(i--);//2
+    System.out.println(i--);//1
+    System.out.println(i);//0
 
   }
 }

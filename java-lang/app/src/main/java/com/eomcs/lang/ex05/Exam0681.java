@@ -5,7 +5,7 @@ package com.eomcs.lang.ex05;
 public class Exam0681 {
   public static void main(String[] args) {
     int a = 5;
-    int r = --a + --a / --a;
+    int r = --a + --a / --a;  // 4 + 3 / 2 = 5
     System.out.printf("%d, %d\n", a, r);
     // 연산 순서
     // r = 4 + --a / --a;

@@ -19,6 +19,7 @@ public class Exam0660 {
     // System.out.println(4)
 
     System.out.println(i); // 4
+    System.out.println(--i);//3
 
   }
 }

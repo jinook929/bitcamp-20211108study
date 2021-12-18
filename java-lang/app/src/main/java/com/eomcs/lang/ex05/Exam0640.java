@@ -5,7 +5,7 @@ package com.eomcs.lang.ex05;
 public class Exam0640 {
   public static void main(String[] args) {
     int i = 2;
-    int result = i++ + i++ * i++;
+    int result = i++ + i++ * i++;   // 2 + 3 * 4
     // 연산자 우선수위: 
     // 1) ++, -- 
     // 2) *, /, %

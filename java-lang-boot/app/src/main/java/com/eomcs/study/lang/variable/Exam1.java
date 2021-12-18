@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("lang.variable") //클래스 이름이 같을 때 충돌 방지
+@RestController("lang.variable") //클래스 이름이 같을 때 충돌 방지, 스프링 부트가 ㅇ
 @RequestMapping("/lang/variable/exam1")
 public class Exam1 {
   //test URL 

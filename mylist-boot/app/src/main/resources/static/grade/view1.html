@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>연락처</title>
+</head>
+
+<body>
+  <h1>연락처 상세</h1>
+
+  <form>
+    이메일*: <input id="x-email" type="text" readonly><br>
+    이름*: <input id="x-name" type="text"><br>
+    전화*: <input id="x-tel" type="text"><br>
+    회사: <input id="x-company" type="text"><br>
+    (*) 항목은 필수 입력입니다.<br>
+    <button id="x-update-btn" type="button">변경</button>
+    <button id="x-delete-btn" type="button">삭제</button>
+    <button id="x-cancel-btn" type="button">취소</button>
+  </form>
+  <script type="text/javascript">
+//1)URL에서 쿼리스트링(query string)을 추출한다.
+    var arr = location.href.split('?')   // "?"를 기준으로 쪼갠다.
+    console.log(arr) ;     
+    if(arr.length == 1) {
+      alert("요청이 옳바르지 않습니다.")
+      throw "요청이 옳바르지 않습니다.";
+    }
+    var qs = arr[1];
+    console.log(qs);
+    // 2) 쿼리 스트링에서 email 값을 추출한다.
+    
+    var params = new URLSearchParams(qs);  //
+    email = params.get("email");
+    
+    if (email == null) {
+      alert("이메일 값이 없습니다.");
+      throw "파라미터 오류";
+    }
+    console.log(email);
+    
+    var xName = document.querySelector("#x-name")
+    var xEmail = document.querySelector("#x-email")
+    var xTel = document.querySelector("#x-tel")
+    var xCompany = document.querySelector("#x-company") 
+    //처음 리프레쉬하면 각태그에 해당하는 입력상자를찾는다.
+    //두번 째 함수가 호출되면 처음에 찾아놨던 입력창을 그대로 사용한다.
+   
+    //3) 서버에서 데이터 가져오기
+    fetch(`/contact/get?email=${email}`).then(function(response){
+      return response.text();
+
+    }).then(function(contact){
+      var values = contact.split(",");
+      
+      //4) 연락처 상세데이터를 화면에 출력한다.
+      xName.value = values[0];
+      xEmail.value = values[1];
+      xTel.value = values[2];
+      xCompany.value = values[3];
+    })
+    document.querySelector("#x-update-btn").onclick = function() { //함수의 리턴 값을 받는 변수를 한 번만 사용할 경우, 변수 대신 함수 호출을 삽입하라!) 
+
+      if (xName.value == "" || xTel.value == "") {
+        window.alert("필수 입력 항목이 비어있습니다.");
+        return; //return = 함수 실행을 끝내라.
+      }
+     fetch(`/contact/update?name=${xName.value}&email=${xEmail.value}&tel=${xTel.value}&company=${xCompany.value}`) //입력된 값을 서버에 보내기
+     .then(function(response){
+       return response.text(); // 응답 데이터를 텍스트로 추출. json형식의 문자열은 "abc ,ddd,fff"처럼 ""이 붙어야 한다. response.json -> json형식의 데이터를 자바스크립트 객체로 바꿔줘!(서버에서 json형식 데이터를 객체형식으로 바꾸란 의미)
+     })
+     .then(function(text){ //추가 후 목록화면으로 돌아가기
+       console.log(text);
+       location.href = "index.html";
+     });
+    };
+    document.querySelector("#x-cancel-btn").onclick = function() {
+      window.location.href = "index.html";
+    
+    } //취소버튼 추가
+    document.querySelector("#x-delete-btn").onclick = function() {
+      fetch(`/contact/delete?email=${email}`)
+      .then(function(response){
+        return response.json();
+
+      }).then(function(result){
+          console.log(result);
+          location.href = "index.html"
+      })
+    }
+ </script>
+
+
+
+</body>
+
+</html>

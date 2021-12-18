@@ -4,9 +4,11 @@ package com.eomcs.lang.ex05;
 //
 public class Exam0631 {
   public static void main(String[] args) {
-    int i = 7;
+    int i = 7;  // int temp = i 
+    // i = i+1
+    // i = temp
 
-    i = i++;
+    i = i++; // -> i = 7 ++ -> 아직 8이 안됐다.  ++ 연산자 실행 7+1 = 8
     // 위 문장은 다음과 같이 실행된다.
     //int temp = i;
     //i = i + 1;
@@ -23,6 +25,8 @@ public class Exam0631 {
     //    => i <===== 7 실행
     //    => 다시 i는 8에서 7로 바뀌었다.
 
+    System.out.println(i);
+    System.out.println(i++);
     System.out.println(i);
 
   }

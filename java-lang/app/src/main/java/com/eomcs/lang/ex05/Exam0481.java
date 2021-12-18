@@ -18,7 +18,7 @@ public class Exam0481 {
 
     // 3) 접근 테스트
     // => menu1이 로그아웃 상태에서 접근 가능한 것인지 검사한다.
-    System.out.println((menu2 & LOGOUT) > 0);
+    System.out.println((menu2 & LOGOUT) > 0);  // & 연산자는 피연산자 모두 1일 때만 true이며, 하나라도 아닐 때는 0을 반환한다.
     System.out.println((menu2 & GENERAL) > 0);
     System.out.println((menu2 & ADMIN) > 0);
     System.out.println("----------------------------------");
