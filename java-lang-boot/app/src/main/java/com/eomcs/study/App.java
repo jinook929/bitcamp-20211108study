@@ -2,8 +2,11 @@ package com.eomcs.study;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @SpringBootApplication
@@ -14,7 +17,7 @@ public class App {
     }
     @RequestMapping("/hello")
     String hello() {
-        return "Hello World!";
+        return "Hello, java-lang-boot!";
     }
     public Object getGreeting() {
       // TODO Auto-generated method stub

@@ -27,7 +27,7 @@ public class Exam0150 {
 
     // byte + int = int
     // => byte가 int로 암시적 형변환 한 이후 연산을 수행한다.
-    int r4 = b + i; // OK
+    int r4 = b + i; // OK. byte와 int는 단위가 다르기 때문에 byte가 int로 암시적 형변환되어서 연산됨.
 
     // short + int = int
     // => short가 int로 암시적 형변환 한 이후 연산을 수행한다.
@@ -39,7 +39,8 @@ public class Exam0150 {
 
     // long + float = float
     // => long이 float으로 암시적 형변환 한 후에 연산을 수행한다.
-    //    long r7 = l + f; // 컴파일 오류!
+    //    long r7 = l + f; // 컴파일 오류! ,long변수에 들어있는 값을 꺼내서 float메모리에 임시적으로 복사해서 연산.
+    //                                       변수의 type을 바꾸는 것은 아님. 임시메모리는 실행한후 버려짐.(레지스트리)
 
     // int + float = float
     // => 정수 타입의 값과 부동소수점 타입의 값을 연산하면
@@ -47,7 +48,7 @@ public class Exam0150 {
     //    int r8 = i + f; // 컴파일 오류!
 
     // float + double = double
-    //    float r9 = f + d; // 컴파일 오류!
+    //    float r9 = f + d; // 컴파일 오류! 
 
     // byte + short + int + long + float + double = double
     //long r10 = b + s + i + l + f + d; // 컴파일 오류!

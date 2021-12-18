@@ -20,11 +20,21 @@ public class Exam0410 {
 }
 // 실행 순서와 메모리
 // 1) java -classpath bin com.eomcs.basic.ex07.Exam0410
-//    => JVM은 클래스 정보를 Method Area 영역에 로드한다.
-// 2) main() 호출
+//    => JVM은 클래스 정보를 Method Area 영역에 로드한다.(메모리에 클래스코드를
+//로딩한다- 클래스 로딩)
+// 2) main() 호출 - main을 찾아서 실행한다
+/*  public static void main(String[] args) {
+int a = 100;
+int b = 200;
+swap(a, b);
+System.out.printf("main(): a=%d, b=%d\n", a, b);*/
 //    => JVM Stack 영역에 main() 메서드가 사용할 로컬 변수를 준비한다.
 // 3) swap() 호출
 //    => JVM Stack 영역에 swap() 메서드가 사용할 로컬 변수를 준비한다.
+/* int temp = a;
+    a = b;
+    b = temp;
+ * */
 // 4) swap() 실행 완료
 //    => JVM Stack 영역에 있던 swap()이 사용한 메모리를 제거한다.
 // 5) main() 실행 완료

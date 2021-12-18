@@ -25,6 +25,7 @@ public class Exam0141 {
     System.out.println(r);                         
   }
 }
+//두개의 정수 값 중 한개만 float으로 형변환해도 된다. 암시적으로 형변환 하도록 유도하기 때문
 
 // 정리!
 // - int와 int의 연산 결과는 int이다.

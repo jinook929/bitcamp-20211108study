@@ -10,7 +10,8 @@ public class Exam0510 {
     //    조건이 거짓이면 표현식2를 실행한다.
     int age = 20;
     int age1 = 17;
-
+    String message2 = (age > 18 ) ? "성년" : "미성년";
+    System.out.printf("나이 %d는 %s이다.",age,message2);
     // 조건 연산자는 할당 연산자(=)의 왼편에 변수를 선언해야 한다.
     // => 선언하지 않으면 문법 오류!
     //    (age > 18) ? System.out.println("성인이다.") : System.out.println("미성년자이다.");

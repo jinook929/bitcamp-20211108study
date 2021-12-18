@@ -1,7 +1,7 @@
 package com.eomcs.lang.ex07;
 
 //# 메서드 : 레퍼런스를 리턴하기
-//
+//아직안배움
 public class Exam0340 {
 
   // swap()에서 만든 int a와 int b의 값을 main()에서 사용하기

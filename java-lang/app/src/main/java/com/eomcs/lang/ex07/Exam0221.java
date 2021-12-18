@@ -4,15 +4,15 @@ package com.eomcs.lang.ex07;
 //
 public class Exam0221 {
 
-  static void hello(String name, int age) {
-    System.out.printf("%d살 %s님 반갑습니다.\n", age, name);
+  static void hello(int age,String name ) {
+    System.out.printf(" %s님 %d살  반갑습니다.\n", name, age);
   }
 
   public static void main(String[] args) {
     // 파라미터의 타입, 개수, 순서가 일치해야 한다.
 
     //    hello("윤봉길"); // 컴파일 오류!
-    //    hello(20, "윤봉길"); // 컴파일 오류!
+        hello( 20,"윤봉길");
     //    String r = hello("안중근", 30); // 컴파일 오류!
     //    void r = hello("안중근", 30); // 컴파일 오류!
   }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 //
 public class Exam0111 {
 
-  static void printSpaces(int len) {
+  static void printSpaces(int len) {  //void는 아무것도 리턴하지않고 작업만수행 하겠다.
     int spaceCnt = 1;
     while (spaceCnt <= len) {
       System.out.print(" ");

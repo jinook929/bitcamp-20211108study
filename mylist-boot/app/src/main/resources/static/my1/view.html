@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+​
+<head>
+  <meta charset="utf-8">
+  <title>노래 등록</title>
+</head>
+​
+<body>
+  <h1>노래 정보</h1>
+  <form>
+    가수*: <input id="x-name" type="text"><br>
+    장르*: <input id="x-genre" type="text"><br>
+    작곡가: <input id="x-composer" type="text"><br>
+    앨범판매량: <input id="x-album" type="text" readonly><br>
+    별표(*) 항목은 필수 입력입니다.<br>
+    <button id="x-update-btn" type="button">변경</button>
+    <button id="x-delete-btn" type="button">삭제</button>
+    <button id="x-cancel-btn" type="button">취소</button>
+  </form>
+​
+  <script>
+    var arr = location.href.split("?")
+    console.log(arr);
+​
+    if (arr.length == 1) {
+      alert("요청한 형식이 올바르지 않습니다.")
+      throw "URL 형식 오류"
+    }
+​
+    var qs = arr[1]
+    console.log(qs);
+​
+    var params = new URLSearchParams(qs)
+    var tel = params.get("album")
+​
+​
+    if (tel == null) {
+      alert("등록되어있지 않습니다.")
+      throw "parameter error"
+    }
+    console.log(tel);
+​
+    var xName = document.querySelector("#x-name")
+    var xGenre = document.querySelector("#x-genre")
+    var xComposer = document.querySelector("#x-composer")
+    var xAlbum = document.querySelector("#x-album")
+​
+    fetch(`/my1/get?tel=${tel}`)
+      .then(function(response) {
+        return response.text()
+      })
+      .then(function(result) {
+        var values = result.split(",")
+​
+        xCategory.value = values[0]
+        xName.value = values[1]
+        xGenre.value = values[2]
+        xComposer.value = values[3]
+      })
+​
+    document.querySelector("#x-update-btn").onclick = function() {
+      if (xName.value == "" || xTel.value == "") {
+        alert("필수입력 항목 작성해주세요.")
+        return
+      }
+​
+      fetch(`/my1/update?category=${xCategory.value}&name=${xName.value}&menu=${xcomposer.value}&tel=${xalbum.value}`)
+        .then(function(response) {
+          return response.text()
+        })
+        .then(function(result) {
+          console.log(result);
+          location.href = "index.html"
+        })
+    }
+​
+    document.querySelector("#x-cancel-btn").onclick = function() {
+      location.href = "index.html"
+    }
+​
+    document.querySelector("#x-delete-btn").onclick = function() {
+    fetch(`/my1/delete?tel=${tel}`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        console.log(result);
+        location.href = "index.html";
+      });
+  };
+  </script>
+​
+​
+</body>
+​
+</html>

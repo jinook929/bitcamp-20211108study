@@ -1,11 +1,12 @@
 // 관계 연산자 : 부동소수점 비교 
 package com.eomcs.lang.ex05;
 
-public class Exam0222 {
+public class Exam0221 {
   public static void main(String[] args) {
     float f1 = 12.321f;
     float f2 = 1.1f;
     System.out.println((f1 + f2) == 13.421f);
+    System.out.println("----");
     System.out.println(Math.abs((f1 + f2) - 13.421f) <= Float.POSITIVE_INFINITY);
     System.out.println(f1);
     System.out.println(f2);

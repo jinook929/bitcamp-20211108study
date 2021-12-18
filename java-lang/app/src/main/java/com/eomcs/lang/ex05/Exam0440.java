@@ -13,7 +13,7 @@ public class Exam0440 {
     System.out.println(i);
     System.out.println(Integer.toHexString(i));
 
-
+    
     // [00100111_10100001_00110000_11111111] => 27a130ff
 
     a = i >> 24;

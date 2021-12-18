@@ -9,7 +9,8 @@ public class Exam0340 {
     // 1부터 10까지 출력하기
     do
       System.out.println(++i);
-    while (i < 10);
+    while (i < 10);  //do while 문은 조건이 거짓이라도 일단 실행한다
+                      //그리고 나서 조건의 참,거짓에 따라 반복 또는 중단한다.
 
     System.out.println("---------------------");
 

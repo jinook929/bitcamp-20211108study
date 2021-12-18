@@ -16,6 +16,7 @@ public class Exam0240 {
     // hello() 메서드를 실행하고, 그 리턴 값을 변수에 담는다.
     String r = hello("홍길동", 20);
     System.out.println(r);
+    String l = hello("임꺽정",30);
 
     // 앞의 예제와 마찬가지로 리턴 값을 한 번만 사용한다면,
     // 사용할 곳에 메서드 호출 코드를 둬라!
@@ -23,6 +24,6 @@ public class Exam0240 {
     System.out.println(hello("홍길동", 20));
 
     // 리턴 값을 안 받아도 된다.
-    hello("임꺽정", 30); // 리턴 값은 버려진다.
+    System.out.println(l); // 리턴 값은 버려진다.
   }
 }

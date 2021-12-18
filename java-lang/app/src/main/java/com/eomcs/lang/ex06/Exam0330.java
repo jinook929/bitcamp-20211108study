@@ -6,7 +6,7 @@ public class Exam0330 {
   public static void main(String[] args) {
     int x = 2, y = 1;
 
-    // 5 * 5 까지만 출력하라!
+    // 5단만 5 * 5 까지만 출력하라!
     //
     while (x <= 9) {
 
