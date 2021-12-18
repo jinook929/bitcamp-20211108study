@@ -1,5 +1,4 @@
 //literal : 부동소수점 리터럴과 값의 범위
-
 package com.eomcs.study.lang.literal;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/lang/literal/exam4")
 
 public class Exam4 {
-  
 
   @GetMapping("/test1")
   public String test1() {
-    double value =987.6543f;
+    double value = 987.6543f;
     //8바이트 메모리를 사용하는 리터럴
     return "부동소수점 : " +value; 
-} 
+  } 
   @GetMapping("/test2")
   public String test2() {
     double value = 987654321.1234567; // 8바이트 메모리를 사용하는 리터럴

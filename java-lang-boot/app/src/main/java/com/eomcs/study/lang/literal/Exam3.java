@@ -1,5 +1,4 @@
 //literal : 정수 literal이 표현할 수 있는 값의 범위 
-
 package com.eomcs.study.lang.literal;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/lang/literal/exam3")
-
 public class Exam3 {
 
   @GetMapping("/test1")
@@ -19,28 +17,28 @@ public class Exam3 {
     // 문자열 + (숫자 -->문자열) = 한개의 문자열로 만듦
   }
 
-@GetMapping("/test2")
-public String test2() {
-  return "정수 : " +  -21_4748_3647;  
-//  return "정수 : " +  -21_4748_3648;
-}
+  @GetMapping("/test2")
+  public String test2() {
+    return "정수 : " +  -21_4748_3647;  
+    //  return "정수 : " +  -21_4748_3648;
+  }
 
-@GetMapping("/test3")
-public String test3() {
-  return "정수 : " +  21_4748_3647L;   // 리터럴을 저장할 때 8바이트 메모리를 사용하라고 표시한다.
-}
+  @GetMapping("/test3")
+  public String test3() {
+    return "정수 : " +  21_4748_3647L;   // 리터럴을 저장할 때 8바이트 메모리를 사용하라고 표시한다.
+  }
 
-@GetMapping("/test4")
-public String test4() {
-  return "정수 : " +  -21_4748_3649l;   // 리터럴을 저장할 때 8바이트 메모리를 사용하라고 표시한다.
-} 
+  @GetMapping("/test4")
+  public String test4() {
+    return "정수 : " +  -21_4748_3649l;   // 리터럴을 저장할 때 8바이트 메모리를 사용하라고 표시한다.
+  } 
 
-@GetMapping("/test5")
-public String test5() {
-  return "정수 : " +  -922_0000_0000_0000l;  
-}
+  @GetMapping("/test5")
+  public String test5() {
+    return "정수 : " +  -922_0000_0000_0000l;  
+  }
 
-@GetMapping("/test6")
-public String test6() {
-  return "정수 : " +  +2121_423748_3123649l;  }
+  @GetMapping("/test6")
+  public String test6() {
+    return "정수 : " +  +2121_423748_3123649l;  }
 }

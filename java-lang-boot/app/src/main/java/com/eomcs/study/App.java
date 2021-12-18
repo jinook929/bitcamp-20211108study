@@ -8,16 +8,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class App {
+  public static void main(String[] args) {
+    SpringApplication.run(App.class, args);
+  }
 
-    public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
-    }
-    @RequestMapping("/hello")
-    String hello() {
-        return "Hello World!";
-    }
-    public Object getGreeting() {
-      // TODO Auto-generated method stub
-      return null;
-    }
+  @RequestMapping("/")
+  String home() {
+    return "*** HOME PAGE ***";
+  }
+
+  @RequestMapping("/hello")
+  String hello() {
+    return "Hello World~^^!";
+  }
+
+  public Object getGreeting() {
+    // TODO Auto-generated method stub
+    return null;
+  }
 }
